@@ -1,6 +1,6 @@
 import React from "react";
 import Pagination from "../components/pagination/pagination";
-import Sort from "../components/sort/sort";
+import Sort, { sortList } from "../components/sort/sort";
 import Filter from "../components/filter/filter";
 import FilmItem from "../components/film-item/film-item";
 import AddFilm from "../components/add-film-button/add-film-button";
@@ -8,12 +8,7 @@ import AddFilm from "../components/add-film-button/add-film-button";
 import { useSelector } from "react-redux";
 import { RootState, useAppDispatch } from "../redux/store";
 import { fetchFilms } from "../redux/film-item/asyncActions";
-import {
-  DurationProperty,
-  RatingProperty,
-  SearchFilmParams,
-  SortPropertyEnum,
-} from "../types";
+import { DurationProperty, RatingProperty, SearchFilmParams } from "../types";
 import {
   setCurrentPage,
   setDuration,
@@ -32,7 +27,7 @@ const HomePage: React.FC<HomePageProps> = () => {
   const isMounted = React.useRef(false);
   const navigate = useNavigate();
   const { items, status } = useSelector((state: RootState) => state.film);
-  const { ratingOption, durationOption } = useSelector(
+  const { ratingOption, durationOption, currentPage } = useSelector(
     (state: RootState) => state.filter
   );
 
@@ -50,24 +45,25 @@ const HomePage: React.FC<HomePageProps> = () => {
     window.scrollTo(0, 0);
   };
 
-  //Если был первый рендер, то проверяем url параметры и сохраняем в редаксе
+  //парсим параметры фильтрации при первом рендере
   React.useEffect(() => {
     if (window.location.search) {
       const searchParams = qs.parse(
         window.location.search.substring(1)
       ) as unknown as SearchFilmParams;
 
+      const sort = sortList.find(
+        (obj) => obj.sortProperty === searchParams.sortBy
+      );
+
       dispatch(
         setFilters({
           searchValue: "",
           ratingOption: searchParams.rating as RatingProperty,
           durationOption: searchParams.duration as DurationProperty,
-          sort: {
-            name: "Рейтингу",
-            sortProperty: SortPropertyEnum.RATING,
-          },
           orderValue: searchParams.order,
-          currentPage: 1,
+          currentPage: searchParams.currentPage,
+          sort: sort || sortList[0],
         })
       );
 
@@ -82,22 +78,35 @@ const HomePage: React.FC<HomePageProps> = () => {
       getFilms();
     }
     isSearch.current = false;
-  }, [ratingOption, durationOption, sort.sortProperty, orderValue]);
+  }, [
+    ratingOption,
+    durationOption,
+    sort.sortProperty,
+    orderValue,
+    currentPage,
+  ]);
 
-  //Если самый первый рендер - не вставляем ничего в url.  На следующий рендер уже вставит параметры в url;
+  //Если изменили параметры и был первый рендер
   React.useEffect(() => {
-    if (isMounted.current == true) {
+    if (isMounted.current) {
       const queryString = qs.stringify({
         ratingOption,
         durationOption,
         orderValue,
         sortProperty: sort.sortProperty,
+        currentPage,
       });
       navigate(`?${queryString}`);
     }
 
     isMounted.current = true;
-  }, [ratingOption, durationOption, sort.sortProperty, orderValue]);
+  }, [
+    ratingOption,
+    durationOption,
+    sort.sortProperty,
+    orderValue,
+    currentPage,
+  ]);
 
   const onChangeRatingOption = (option: RatingProperty) => {
     dispatch(setRating(option));
@@ -108,6 +117,11 @@ const HomePage: React.FC<HomePageProps> = () => {
     dispatch(setDuration(option));
     dispatch(setCurrentPage(1));
   };
+
+  const onChangePage = (page: number) => {
+    dispatch(setCurrentPage(page));
+  };
+  console.log(onChangePage);
 
   const filmsItemsList = items.map((filmData) => {
     return <FilmItem key={filmData.id} filmData={filmData} />;
