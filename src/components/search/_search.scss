@@ -1,0 +1,26 @@
+@import "../../assets/styles/variables";
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 50%;
+  background-color: $main-background-color-white;
+  padding: 10px 20px;
+  border-radius: 10px;
+
+  &__search-svg {
+    width: 20px;
+    filter: $filter-grey-color;
+    margin-right: 10px;
+  }
+
+  &__input {
+    width: 100%;
+    font-size: 17px;
+  }
+
+  &__clean-svg {
+    width: 25px;
+  }
+}

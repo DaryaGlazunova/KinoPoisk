@@ -1,0 +1,34 @@
+@import "../../assets/styles/variables";
+
+.filter {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 20px;
+  border-radius: 10px;
+  border-radius: 10px;
+  background-color: $main-background-color-white;
+
+  & select {
+    margin-bottom: 20px;
+    font-size: 17px;
+    padding: 5px 10px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  & label {
+    color: $main-fc-color-black;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  & select:last-child {
+    margin-bottom: 0;
+  }
+
+  & option {
+    font-size: 17px;
+  }
+}

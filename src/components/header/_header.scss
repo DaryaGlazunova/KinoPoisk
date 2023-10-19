@@ -1,0 +1,23 @@
+@import "../../assets/styles/variables";
+
+.header {
+  &__container {
+    padding: 20px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    color: white;
+    text-transform: uppercase;
+    font-size: 38px;
+    letter-spacing: 1px;
+    & span {
+      color: $orange-color;
+    }
+  }
+
+  &__search {
+  }
+}
