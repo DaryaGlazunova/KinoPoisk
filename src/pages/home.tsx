@@ -16,14 +16,14 @@ import {
   setRating,
 } from "../redux/filter/filterSlider";
 import { useNavigate } from "react-router-dom";
-import qs from "qs";
+import qs from "qs"; //парсинг параметров
 import FilmItemSkeleton from "../components/film-item/skeleton";
 
 interface HomePageProps {}
 
 const HomePage: React.FC<HomePageProps> = () => {
   const dispatch = useAppDispatch();
-  const isSearch = React.useRef(false);
+  const isSearch = React.useRef(false); //фильтров в url нет, по умолчанию ничего нет
   const isMounted = React.useRef(false);
   const navigate = useNavigate();
   const { items, status } = useSelector((state: RootState) => state.film);
@@ -31,22 +31,26 @@ const HomePage: React.FC<HomePageProps> = () => {
     (state: RootState) => state.filter
   );
 
-  const { sort, orderValue } = useSelector((state: RootState) => state.filter);
+  const { sort, orderValue, perPage } = useSelector(
+    (state: RootState) => state.filter
+  );
 
   const getFilms = async () => {
     const order = orderValue;
     const sortBy = sort.sortProperty;
     const rating = ratingOption;
     const duration = durationOption;
-    const currentPage = 1;
 
-    dispatch(fetchFilms({ sortBy, order, rating, duration, currentPage }));
+    dispatch(
+      fetchFilms({ sortBy, order, rating, duration, currentPage, perPage })
+    );
 
     window.scrollTo(0, 0);
   };
 
   //парсим параметры фильтрации при первом рендере
   React.useEffect(() => {
+    //проверяем есть ли параметры в url
     if (window.location.search) {
       const searchParams = qs.parse(
         window.location.search.substring(1)
@@ -55,7 +59,7 @@ const HomePage: React.FC<HomePageProps> = () => {
       const sort = sortList.find(
         (obj) => obj.sortProperty === searchParams.sortBy
       );
-
+      //передача параметров из url в редакс
       dispatch(
         setFilters({
           searchValue: "",
@@ -64,9 +68,10 @@ const HomePage: React.FC<HomePageProps> = () => {
           orderValue: searchParams.order,
           currentPage: searchParams.currentPage,
           sort: sort || sortList[0],
+          perPage,
         })
       );
-
+      //был ли ранее произведен диспатч на изменение филтров (true - был)
       isSearch.current = true;
     }
   }, []);
@@ -74,6 +79,8 @@ const HomePage: React.FC<HomePageProps> = () => {
   //выполнение запроса для получение данных из бэка при изменении ондого из параметров массива
   React.useEffect(() => {
     window.scrollTo(0, 0);
+    //если isSearch = false значит можно делать запрос по умолчанию ( с параметрами из редакса) т.к. диспатчка на изменение фильтров не было
+    //если isSerch = true значит не нужно делать запрос
     if (isSearch.current == false) {
       getFilms();
     }
@@ -87,8 +94,10 @@ const HomePage: React.FC<HomePageProps> = () => {
   ]);
 
   //Если изменили параметры и был первый рендер
+  // isMounted - если приложение впервые отрендерилось не надо в URL что-то вшивать. Т.е. если первый рендер-ничего не меняй. Если же уже не первый рендер, то тогда выполняем действие
   React.useEffect(() => {
     if (isMounted.current) {
+      //создаем объект который потом вошьем в браузерную строку
       const queryString = qs.stringify({
         ratingOption,
         durationOption,
@@ -96,6 +105,7 @@ const HomePage: React.FC<HomePageProps> = () => {
         sortProperty: sort.sortProperty,
         currentPage,
       });
+      //передаем параметры в адресную строку
       navigate(`?${queryString}`);
     }
 
@@ -121,9 +131,13 @@ const HomePage: React.FC<HomePageProps> = () => {
   const onChangePage = (page: number) => {
     dispatch(setCurrentPage(page));
   };
-  console.log(onChangePage);
 
-  const filmsItemsList = items.map((filmData) => {
+  //последний индекс
+  const lastFilmIndex = currentPage * perPage;
+  const firstFilmIndex = lastFilmIndex - perPage;
+  const currentFilm = items.slice(firstFilmIndex, lastFilmIndex);
+
+  const filmsItemsList = currentFilm.map((filmData) => {
     return <FilmItem key={filmData.id} filmData={filmData} />;
   });
   const skeleton = [...new Array(6)].map((_, index) => (
@@ -154,7 +168,12 @@ const HomePage: React.FC<HomePageProps> = () => {
           <div className="content__items">
             {status === "loading" ? skeleton : filmsItemsList}
           </div>
-          <Pagination />
+          <Pagination
+            perPage={perPage}
+            totalFilms={items.length}
+            currentPage={currentPage}
+            onChangePage={onChangePage}
+          />
         </div>
       </div>
     </main>

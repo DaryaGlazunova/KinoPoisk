@@ -98,18 +98,13 @@ const filterDataByDuration = (
 export const fetchFilms = createAsyncThunk<Film[], SearchFilmParams>(
   "film/fetchFilms",
   async (params) => {
-    const { sortBy, order, rating, duration, currentPage } = params;
-    console.log(sortBy, order, rating, duration, currentPage);
-
-    // const apiPath = `http://localhost:3001/films?page=${currentPage}&limit=8&${category}&${category}&sortBy=${sortBy}&order=${order}${search}`;
-    // const apiPath = `http://localhost:3001/films?page=${currentPage}&limit=8&${rating}`;
+    const { sortBy, order, rating, duration, currentPage, perPage } = params;
+    console.log(perPage, currentPage);
     const apiPath = `http://localhost:3001/films?_sort=${sortBy}&_order=${order}`;
-    console.log(apiPath);
-    let { data } = await axios.get<Film[]>(apiPath);
 
+    let { data } = await axios.get<Film[]>(apiPath);
     data = filterDataByRating(data, rating);
     data = filterDataByDuration(data, duration);
-
     return data;
   }
 );

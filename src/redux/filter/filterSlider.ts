@@ -14,6 +14,7 @@ export interface IntefaceFilterState {
   sort: SortProperty;
   orderValue: string;
   currentPage: number;
+  perPage: number;
 }
 
 const initialState: IntefaceFilterState = {
@@ -26,6 +27,7 @@ const initialState: IntefaceFilterState = {
   },
   orderValue: "desc",
   currentPage: 1,
+  perPage: 8,
 };
 
 export const filterSlice = createSlice({
@@ -66,6 +68,7 @@ export const filterSlice = createSlice({
         };
         state.orderValue = "desc";
         state.currentPage = 1;
+        state.perPage = 8;
       }
     },
   },

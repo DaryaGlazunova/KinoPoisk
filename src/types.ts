@@ -33,6 +33,7 @@ export type SearchFilmParams = {
   rating: RatingProperty;
   duration: DurationProperty;
   currentPage: number;
+  perPage: number;
 };
 
 export interface Film {
