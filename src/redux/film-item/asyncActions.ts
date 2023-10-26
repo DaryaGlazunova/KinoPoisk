@@ -6,6 +6,7 @@ import {
   SearchFilmParams,
 } from "../../types";
 import axios from "axios";
+import { getAverageRating } from "../../utils/getAverageRating";
 
 type RatingMinMaxValue = {
   rating: RatingProperty;
@@ -65,17 +66,22 @@ const DurationFiltrParameters: DurationMinMaxValue[] = [
   },
 ];
 
-const filterDataByRating = (data: Film[], rating: RatingProperty): Film[] => {
+const filterDataByRating = (
+  filmData: Film[],
+  rating: RatingProperty
+): Film[] => {
   const minMaxValuesObj = RatingFiltrParameters.find(
     (obj) => obj.rating === rating
   );
-  if (!minMaxValuesObj) return data;
+  if (!minMaxValuesObj) return filmData;
 
-  return (data = data.filter(
-    (itemData) =>
-      minMaxValuesObj.minValue <= Number(itemData.rating) &&
-      Number(itemData.rating) <= minMaxValuesObj.maxValue
-  ));
+  return (filmData = filmData.filter((itemData) => {
+    const filmRating = getAverageRating(itemData.rating);
+    return (
+      minMaxValuesObj.minValue <= filmRating &&
+      filmRating <= minMaxValuesObj.maxValue
+    );
+  }));
 };
 
 const filterDataByDuration = (

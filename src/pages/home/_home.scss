@@ -1,7 +1,9 @@
+@import "../../assets/styles/variables";
+
 .content {
   width: 100%;
   display: flex;
-  margin: 60px 15px;
+  margin: 0 15px;
 
   &__column-1 {
     flex: 0 1 20%;

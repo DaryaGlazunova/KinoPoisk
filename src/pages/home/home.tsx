@@ -1,23 +1,29 @@
 import React from "react";
-import Pagination from "../components/pagination/pagination";
-import Sort, { sortList } from "../components/sort/sort";
-import Filter from "../components/filter/filter";
-import FilmItem from "../components/film-item/film-item";
-import AddFilm from "../components/add-film-button/add-film-button";
+import Pagination from "../../components/pagination/pagination";
+import Sort, { sortList } from "../../components/sort/sort";
+import Filter from "../../components/filter/filter";
+import FilmItem from "../../components/film-item/film-item";
+import AddFilm from "../../components/add-film-button/add-film-button";
 
 import { useSelector } from "react-redux";
-import { RootState, useAppDispatch } from "../redux/store";
-import { fetchFilms } from "../redux/film-item/asyncActions";
-import { DurationProperty, RatingProperty, SearchFilmParams } from "../types";
+import { RootState, useAppDispatch } from "../../redux/store";
+import { fetchFilms } from "../../redux/film-item/asyncActions";
+import {
+  DurationProperty,
+  RatingProperty,
+  SearchFilmParams,
+} from "../../types";
 import {
   setCurrentPage,
   setDuration,
   setFilters,
   setRating,
-} from "../redux/filter/filterSlider";
+} from "../../redux/filter/filterSlider";
 import { useNavigate } from "react-router-dom";
 import qs from "qs"; //парсинг параметров
-import FilmItemSkeleton from "../components/film-item/skeleton";
+import FilmItemSkeleton from "../../components/film-item/skeleton";
+
+import "./_home.scss";
 
 interface HomePageProps {}
 
@@ -27,9 +33,8 @@ const HomePage: React.FC<HomePageProps> = () => {
   const isMounted = React.useRef(false);
   const navigate = useNavigate();
   const { items, status } = useSelector((state: RootState) => state.film);
-  const { ratingOption, durationOption, currentPage } = useSelector(
-    (state: RootState) => state.filter
-  );
+  const { ratingOption, durationOption, currentPage, searchValue } =
+    useSelector((state: RootState) => state.filter);
 
   const { sort, orderValue, perPage } = useSelector(
     (state: RootState) => state.filter
@@ -137,9 +142,13 @@ const HomePage: React.FC<HomePageProps> = () => {
   const firstFilmIndex = lastFilmIndex - perPage;
   const currentFilm = items.slice(firstFilmIndex, lastFilmIndex);
 
-  const filmsItemsList = currentFilm.map((filmData) => {
-    return <FilmItem key={filmData.id} filmData={filmData} />;
-  });
+  const filmsItemsList = currentFilm
+    .filter((filmData) => {
+      return filmData.title.toLowerCase().includes(searchValue.toLowerCase());
+    })
+    .map((filmData) => {
+      return <FilmItem key={filmData.id} filmData={filmData} />;
+    });
   const skeleton = [...new Array(6)].map((_, index) => (
     <FilmItemSkeleton key={index} />
   ));
@@ -166,7 +175,13 @@ const HomePage: React.FC<HomePageProps> = () => {
             </div>
           </div>
           <div className="content__items">
-            {status === "loading" ? skeleton : filmsItemsList}
+            {!filmsItemsList.length ? (
+              <div>Фильмы по вашему запросу не найдены :(</div>
+            ) : status === "loading" ? (
+              skeleton
+            ) : (
+              filmsItemsList
+            )}
           </div>
           <Pagination
             perPage={perPage}

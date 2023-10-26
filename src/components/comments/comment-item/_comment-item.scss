@@ -1,0 +1,50 @@
+@import "../../../assets/styles/variables";
+.comment {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: $main-background-color-grey;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.288);
+  border-radius: 10px;
+  padding: 10px;
+  max-width: 1000px;
+
+  & img {
+    width: 40px;
+    height: 40px;
+  }
+  & button {
+    font-size: 12px;
+    margin-right: 10px;
+    color: rgb(255, 145, 0);
+    opacity: 0.6;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__image {
+    margin-right: 10px;
+  }
+
+  & h4 {
+    font-size: 13px;
+    color: rgb(255, 145, 0);
+    margin-bottom: 5px;
+  }
+  & p {
+    font-size: 12px;
+  }
+  & span {
+    display: inline-block;
+    font-size: 9px;
+    opacity: 0.6;
+    margin-bottom: 5px;
+  }
+
+  &__buttons {
+    position: absolute;
+    top: 10px;
+    right: 0;
+  }
+}

@@ -1,0 +1,23 @@
+@import "../../assets/styles/variables";
+
+.rating {
+  & h3 {
+    margin-bottom: 10px;
+  }
+
+  &__label {
+    & input[type="radio"] {
+      display: none;
+    }
+  }
+
+  &__star {
+    cursor: pointer;
+    transition: color 200ms;
+  }
+
+  &__user-rating-value {
+    margin-top: 5px;
+    font-size: 12px;
+  }
+}
