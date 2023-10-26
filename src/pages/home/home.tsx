@@ -149,7 +149,7 @@ const HomePage: React.FC<HomePageProps> = () => {
     .map((filmData) => {
       return <FilmItem key={filmData.id} filmData={filmData} />;
     });
-  const skeleton = [...new Array(6)].map((_, index) => (
+  const skeleton = [...new Array(8)].map((_, index) => (
     <FilmItemSkeleton key={index} />
   ));
 
@@ -175,14 +175,15 @@ const HomePage: React.FC<HomePageProps> = () => {
             </div>
           </div>
           <div className="content__items">
-            {!filmsItemsList.length ? (
-              <div>Фильмы по вашему запросу не найдены :(</div>
-            ) : status === "loading" ? (
+            {status === "loading" ? (
               skeleton
+            ) : filmsItemsList.length === 0 ? (
+              <div>Фильмы по вашему запросу не найдены</div>
             ) : (
               filmsItemsList
             )}
           </div>
+          {/* <div className="content__items">{skeleton}</div> */}
           <Pagination
             perPage={perPage}
             totalFilms={items.length}

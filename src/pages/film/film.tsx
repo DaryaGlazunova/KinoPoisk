@@ -2,13 +2,12 @@ import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
 import StarRating from "../../components/star-rating/star-rating";
-import axios from "axios";
 import { Film } from "../../types";
 import FilmInfo from "../../components/film-info/film-info";
-import { getAverageRating } from "../../utils/getAverageRating";
 
 import "./_film.scss";
 import Comments from "../../components/comments/comments-list";
+import { fetchFilmInfoApi } from "../../api";
 
 const FilmPage: React.FC = () => {
   const [filmInfo, setFilmInfo] = React.useState<Film>();
@@ -19,7 +18,7 @@ const FilmPage: React.FC = () => {
   React.useEffect(() => {
     async function fetchFilmInfo() {
       try {
-        const { data } = await axios.get(`http://localhost:3001/films/${id}`);
+        const data = await fetchFilmInfoApi(Number(id));
         setFilmInfo(data);
       } catch (error) {
         alert("Ошибка при получении данных фильма!");
@@ -37,19 +36,8 @@ const FilmPage: React.FC = () => {
     <div className="film__container container">
       <FilmInfo {...filmInfo} />
       <div className="film__rating">
-        <StarRating rating={getAverageRating(filmInfo.rating)} />
+        <StarRating rating={filmInfo.rating} />
       </div>
-      {/* <div className="film__comments">
-        <h3>Комментарии к фильму</h3>
-        {commentsList ? (
-          <CommentList comments={commentsList} />
-        ) : (
-          <div>Комментарии к фильму отсутвтуют</div>
-        )}
-      </div>
-      <div className="film__add-comment">
-        <AddComment />
-      </div> */}
       <Comments />
     </div>
   );

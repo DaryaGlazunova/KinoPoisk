@@ -4,16 +4,22 @@ import ContentLoader from "react-content-loader";
 const FilmItemSkeleton = () => (
   <ContentLoader
     speed={2}
-    className="film-item"
-    width={260}
-    height={427}
-    viewBox="0 0 261 427"
+    className="content__items"
+    width="100%"
+    height="100%"
+    viewBox="0 0 235 350"
     backgroundColor="#f3f3f3"
-    foregroundColor="#ecebeb"
+    foregroundColor="#c2c2c2"
   >
-    <rect x="27" y="5" rx="12" ry="12" width="217" height="296" />
-    <rect x="29" y="318" rx="8" ry="8" width="174" height="22" />
-    <rect x="31" y="353" rx="13" ry="13" width="213" height="77" />
+    <rect
+      className="film-item"
+      x="0"
+      y="0"
+      rx="10"
+      ry="10"
+      width="100%"
+      height="100%"
+    />
   </ContentLoader>
 );
 

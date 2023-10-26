@@ -5,7 +5,9 @@
       "poster": "https://fs.kinomania.ru/image/file/film_poster/c/58/c587b2815dd38418dbae5c28fefbaebc.228.331.jpeg",
       "title": "Врата",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Solutculpa laborum lorem ipsum dolor sit amet consectetur adipisicing elit. solutculpa laborum lorem ipsum dolor sit amet consectetur adipisicing elit. solutculpa laborum nesciunt, quia sapiente nobis a facilis modi quidemanimi, quia sapiente nobis a facilis modi quidemanimi, quia sapiente nobis a facilis modi quidemanimi",
-      "rating": 6,
+      "rating": [
+        6
+      ],
       "publicationDate": "12.08.2021",
       "durationHours": 1
     },
@@ -14,7 +16,9 @@
       "poster": "https://fs.kinomania.ru/image/file/film_poster/c/80/c80c35d1aaf7e81ec44cc8f605fd6903.228.331.jpeg",
       "title": "Мальчик и птица",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Solutculpa laborum lorem ipsum dolor sit amet consectetur adipisicing elit. solutculpa laborum lorem ipsum dolor sit amet consectetur adipisicing elit. solutculpa laborum nesciunt, quia sapiente nobis a facilis modi quidemanimi, quia sapiente nobis a facilis modi quidemanimi, quia sapiente nobis a facilis modi quidemanimi",
-      "rating": 10,
+      "rating": [
+        10
+      ],
       "publicationDate": "22.05.2020",
       "durationHours": 4
     },
@@ -23,7 +27,9 @@
       "poster": "https://fs.kinomania.ru/image/file/film_poster/6/a3/6a30be3c4d5cbe25e0a37e1030a61b24.228.331.jpeg",
       "title": "Пиковая дата",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Solutculpa laborum lorem ipsum dolor sit amet consectetur adipisicing elit. solutculpa laborum lorem ipsum dolor sit amet consectetur adipisicing elit. solutculpa laborum nesciunt, quia sapiente nobis a facilis modi quidemanimi, quia sapiente nobis a facilis modi quidemanimi, quia sapiente nobis a facilis modi quidemanimi",
-      "rating": 3,
+      "rating": [
+        3
+      ],
       "publicationDate": "12.08.2021",
       "durationHours": 0.5
     },
@@ -32,7 +38,9 @@
       "poster": "https://fs.kinomania.ru/image/file/film_poster/7/e4/7e4c8f455b0699609758957b7c4e2f6f.228.331.jpeg",
       "title": "Зона интересов",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Solutculpa laborum lorem ipsum dolor sit amet consectetur adipisicing elit. solutculpa laborum lorem ipsum dolor sit amet consectetur adipisicing elit. solutculpa laborum nesciunt, quia sapiente nobis a facilis modi quidemanimi, quia sapiente nobis a facilis modi quidemanimi, quia sapiente nobis a facilis modi quidemanimi",
-      "rating": 4,
+      "rating": [
+        4
+      ],
       "publicationDate": "12.08.2021",
       "durationHours": 0.3
     },
@@ -41,7 +49,9 @@
       "poster": "https://fs.kinomania.ru/image/file/film_poster/d/50/d504c28bbca4cd90d1cf163f8d368fbf.228.331.jpeg",
       "title": "Айлин",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Solutculpa laborum lorem ipsum dolor sit amet consectetur adipisicing elit. solutculpa laborum lorem ipsum dolor sit amet consectetur adipisicing elit. solutculpa laborum nesciunt, quia sapiente nobis a facilis modi quidemanimi, quia sapiente nobis a facilis modi quidemanimi, quia sapiente nobis a facilis modi quidemanimi",
-      "rating": 1,
+      "rating": [
+        1
+      ],
       "publicationDate": "22.05.2020",
       "durationHours": 1
     },
@@ -50,7 +60,9 @@
       "poster": "https://fs.kinomania.ru/image/file/film_poster/0/6b/06b08327bc372ba84f421fa48dee0b8f.228.331.jpeg",
       "title": "Ради всего",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Solutculpa laborum lorem ipsum dolor sit amet consectetur adipisicing elit. solutculpa laborum lorem ipsum dolor sit amet consectetur adipisicing elit. solutculpa laborum nesciunt, quia sapiente nobis a facilis modi quidemanimi, quia sapiente nobis a facilis modi quidemanimi, quia sapiente nobis a facilis modi quidemanimi",
-      "rating": 8,
+      "rating": [
+        8
+      ],
       "publicationDate": "12.08.2021",
       "durationHours": 2
     },
@@ -59,7 +71,9 @@
       "poster": "https://fs.kinomania.ru/image/file/film_poster/0/6b/06b08327bc372ba84f421fa48dee0b8f.228.331.jpeg",
       "title": "Ради всего",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Solutculpa laborum lorem ipsum dolor sit amet consectetur adipisicing elit. solutculpa laborum lorem ipsum dolor sit amet consectetur adipisicing elit. solutculpa laborum nesciunt, quia sapiente nobis a facilis modi quidemanimi, quia sapiente nobis a facilis modi quidemanimi, quia sapiente nobis a facilis modi quidemanimi",
-      "rating": 8,
+      "rating": [
+        8
+      ],
       "publicationDate": "12.08.2021",
       "durationHours": 2
     },
@@ -68,7 +82,9 @@
       "poster": "https://fs.kinomania.ru/image/file/film_poster/5/85/585e4dbfab71280da86b545851e6a736.228.331.jpeg",
       "title": "Следующая жертва",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Solutculpa laborum lorem ipsum dolor sit amet consectetur adipisicing elit. solutculpa laborum lorem ipsum dolor sit amet consectetur adipisicing elit. solutculpa laborum nesciunt, quia sapiente nobis a facilis modi quidemanimi, quia sapiente nobis a facilis modi quidemanimi, quia sapiente nobis a facilis modi quidemanimi",
-      "rating": 6,
+      "rating": [
+        6
+      ],
       "publicationDate": "12.08.2021",
       "durationHours": 0.3
     },
@@ -77,7 +93,9 @@
       "poster": "https://fs.kinomania.ru/image/file/film_poster/5/b3/5b36a8ae59566a8bc49b4dd4366c9a64.228.331.jpeg",
       "title": "Скарлет",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Solutculpa laborum lorem ipsum dolor sit amet consectetur adipisicing elit. solutculpa laborum lorem ipsum dolor sit amet consectetur adipisicing elit. solutculpa laborum nesciunt, quia sapiente nobis a facilis modi quidemanimi, quia sapiente nobis a facilis modi quidemanimi, quia sapiente nobis a facilis modi quidemanimi",
-      "rating": 7,
+      "rating": [
+        7
+      ],
       "publicationDate": "12.08.2019",
       "durationHours": 2
     },
@@ -86,7 +104,9 @@
       "poster": "https://fs.kinomania.ru/image/file/film_poster/7/d4/7d48d3c827cfb8ad83b178aaea61527a.228.331.jpeg",
       "title": "смертельный выстрел",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Solutculpa laborum lorem ipsum dolor sit amet consectetur adipisicing elit. solutculpa laborum lorem ipsum dolor sit amet consectetur adipisicing elit. solutculpa laborum nesciunt, quia sapiente nobis a facilis modi quidemanimi, quia sapiente nobis a facilis modi quidemanimi, quia sapiente nobis a facilis modi quidemanimi",
-      "rating": 4,
+      "rating": [
+        4
+      ],
       "publicationDate": "12.08.2021",
       "durationHours": 1
     },
@@ -95,7 +115,9 @@
       "poster": "https://fs.kinomania.ru/image/file/film_poster/c/58/c587b2815dd38418dbae5c28fefbaebc.228.331.jpeg",
       "title": "Врата",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Solutculpa laborum lorem ipsum dolor sit amet consectetur adipisicing elit. solutculpa laborum lorem ipsum dolor sit amet consectetur adipisicing elit. solutculpa laborum nesciunt, quia sapiente nobis a facilis modi quidemanimi, quia sapiente nobis a facilis modi quidemanimi, quia sapiente nobis a facilis modi quidemanimi",
-      "rating": 6,
+      "rating": [
+        6
+      ],
       "publicationDate": "12.08.2021",
       "durationHours": 1
     },
@@ -104,7 +126,9 @@
       "poster": "https://fs.kinomania.ru/image/file/film_poster/c/80/c80c35d1aaf7e81ec44cc8f605fd6903.228.331.jpeg",
       "title": "Мальчик и птица",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Solutculpa laborum lorem ipsum dolor sit amet consectetur adipisicing elit. solutculpa laborum lorem ipsum dolor sit amet consectetur adipisicing elit. solutculpa laborum nesciunt, quia sapiente nobis a facilis modi quidemanimi, quia sapiente nobis a facilis modi quidemanimi, quia sapiente nobis a facilis modi quidemanimi",
-      "rating": 10,
+      "rating": [
+        10
+      ],
       "publicationDate": "22.05.2020",
       "durationHours": 4
     },
@@ -113,7 +137,9 @@
       "poster": "https://fs.kinomania.ru/image/file/film_poster/6/a3/6a30be3c4d5cbe25e0a37e1030a61b24.228.331.jpeg",
       "title": "Пиковая дата",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Solutculpa laborum lorem ipsum dolor sit amet consectetur adipisicing elit. solutculpa laborum lorem ipsum dolor sit amet consectetur adipisicing elit. solutculpa laborum nesciunt, quia sapiente nobis a facilis modi quidemanimi, quia sapiente nobis a facilis modi quidemanimi, quia sapiente nobis a facilis modi quidemanimi",
-      "rating": 3,
+      "rating": [
+        3
+      ],
       "publicationDate": "12.08.2021",
       "durationHours": 0.5
     },
@@ -122,7 +148,9 @@
       "poster": "https://fs.kinomania.ru/image/file/film_poster/7/e4/7e4c8f455b0699609758957b7c4e2f6f.228.331.jpeg",
       "title": "Зона интересов",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Solutculpa laborum lorem ipsum dolor sit amet consectetur adipisicing elit. solutculpa laborum lorem ipsum dolor sit amet consectetur adipisicing elit. solutculpa laborum nesciunt, quia sapiente nobis a facilis modi quidemanimi, quia sapiente nobis a facilis modi quidemanimi, quia sapiente nobis a facilis modi quidemanimi",
-      "rating": 4,
+      "rating": [
+        4
+      ],
       "publicationDate": "12.08.2021",
       "durationHours": 0.3
     },
@@ -131,7 +159,9 @@
       "poster": "https://fs.kinomania.ru/image/file/film_poster/d/50/d504c28bbca4cd90d1cf163f8d368fbf.228.331.jpeg",
       "title": "Айлин",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Solutculpa laborum lorem ipsum dolor sit amet consectetur adipisicing elit. solutculpa laborum lorem ipsum dolor sit amet consectetur adipisicing elit. solutculpa laborum nesciunt, quia sapiente nobis a facilis modi quidemanimi, quia sapiente nobis a facilis modi quidemanimi, quia sapiente nobis a facilis modi quidemanimi",
-      "rating": 1,
+      "rating": [
+        1
+      ],
       "publicationDate": "22.05.2020",
       "durationHours": 1
     },
@@ -140,7 +170,9 @@
       "poster": "https://fs.kinomania.ru/image/file/film_poster/0/6b/06b08327bc372ba84f421fa48dee0b8f.228.331.jpeg",
       "title": "Ради всего",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Solutculpa laborum lorem ipsum dolor sit amet consectetur adipisicing elit. solutculpa laborum lorem ipsum dolor sit amet consectetur adipisicing elit. solutculpa laborum nesciunt, quia sapiente nobis a facilis modi quidemanimi, quia sapiente nobis a facilis modi quidemanimi, quia sapiente nobis a facilis modi quidemanimi",
-      "rating": 1,
+      "rating": [
+        1
+      ],
       "publicationDate": "12.08.2021",
       "durationHours": 2
     },
@@ -149,7 +181,9 @@
       "poster": "https://fs.kinomania.ru/image/file/film_poster/0/6b/06b08327bc372ba84f421fa48dee0b8f.228.331.jpeg",
       "title": "Ради всего",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Solutculpa laborum lorem ipsum dolor sit amet consectetur adipisicing elit. solutculpa laborum lorem ipsum dolor sit amet consectetur adipisicing elit. solutculpa laborum nesciunt, quia sapiente nobis a facilis modi quidemanimi, quia sapiente nobis a facilis modi quidemanimi, quia sapiente nobis a facilis modi quidemanimi",
-      "rating": 5,
+      "rating": [
+        5
+      ],
       "publicationDate": "12.08.2021",
       "durationHours": 1
     },
@@ -158,7 +192,9 @@
       "poster": "https://fs.kinomania.ru/image/file/film_poster/5/85/585e4dbfab71280da86b545851e6a736.228.331.jpeg",
       "title": "Следующая жертва",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Solutculpa laborum lorem ipsum dolor sit amet consectetur adipisicing elit. solutculpa laborum lorem ipsum dolor sit amet consectetur adipisicing elit. solutculpa laborum nesciunt, quia sapiente nobis a facilis modi quidemanimi, quia sapiente nobis a facilis modi quidemanimi, quia sapiente nobis a facilis modi quidemanimi",
-      "rating": 8,
+      "rating": [
+        8
+      ],
       "publicationDate": "12.08.2021",
       "durationHours": 0.9
     },
@@ -167,7 +203,9 @@
       "poster": "https://fs.kinomania.ru/image/file/film_poster/5/b3/5b36a8ae59566a8bc49b4dd4366c9a64.228.331.jpeg",
       "title": "Скарлет",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Solutculpa laborum lorem ipsum dolor sit amet consectetur adipisicing elit. solutculpa laborum lorem ipsum dolor sit amet consectetur adipisicing elit. solutculpa laborum nesciunt, quia sapiente nobis a facilis modi quidemanimi, quia sapiente nobis a facilis modi quidemanimi, quia sapiente nobis a facilis modi quidemanimi",
-      "rating": 3,
+      "rating": [
+        3
+      ],
       "publicationDate": "12.08.2019",
       "durationHours": 1
     },
@@ -176,7 +214,9 @@
       "poster": "https://fs.kinomania.ru/image/file/film_poster/7/d4/7d48d3c827cfb8ad83b178aaea61527a.228.331.jpeg",
       "title": "смертельный выстрел",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Solutculpa laborum lorem ipsum dolor sit amet consectetur adipisicing elit. solutculpa laborum lorem ipsum dolor sit amet consectetur adipisicing elit. solutculpa laborum nesciunt, quia sapiente nobis a facilis modi quidemanimi, quia sapiente nobis a facilis modi quidemanimi, quia sapiente nobis a facilis modi quidemanimi",
-      "rating": 10,
+      "rating": [
+        10
+      ],
       "publicationDate": "12.08.2021",
       "durationHours": 5
     },
@@ -185,7 +225,9 @@
       "poster": "https://fs.kinomania.ru/image/file/film_poster/7/d4/7d48d3c827cfb8ad83b178aaea61527a.228.331.jpeg",
       "title": "смертельный выстрел",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Solutculpa laborum lorem ipsum dolor sit amet consectetur adipisicing elit. solutculpa laborum lorem ipsum dolor sit amet consectetur adipisicing elit. solutculpa laborum nesciunt, quia sapiente nobis a facilis modi quidemanimi, quia sapiente nobis a facilis modi quidemanimi, quia sapiente nobis a facilis modi quidemanimi",
-      "rating": 1,
+      "rating": [
+        1
+      ],
       "publicationDate": "12.08.2021",
       "durationHours": 0.5
     },
@@ -194,7 +236,13 @@
       "poster": "https://fs.kinomania.ru/image/file/film_poster/7/d4/7d48d3c827cfb8ad83b178aaea61527a.228.331.jpeg",
       "title": "смертельный выстрел",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Solutculpa laborum lorem ipsum dolor sit amet consectetur adipisicing elit. solutculpa laborum lorem ipsum dolor sit amet consectetur adipisicing elit. solutculpa laborum nesciunt, quia sapiente nobis a facilis modi quidemanimi, quia sapiente nobis a facilis modi quidemanimi, quia sapiente nobis a facilis modi quidemanimi",
-      "rating": 6,
+      "rating": [
+        6,
+        5,
+        10,
+        1,
+        7
+      ],
       "publicationDate": "12.08.2021",
       "durationHours": 2
     },
@@ -203,7 +251,9 @@
       "poster": "https://fs.kinomania.ru/image/file/film_poster/7/d4/7d48d3c827cfb8ad83b178aaea61527a.228.331.jpeg",
       "title": "смертельный выстрел",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Solutculpa laborum lorem ipsum dolor sit amet consectetur adipisicing elit. solutculpa laborum lorem ipsum dolor sit amet consectetur adipisicing elit. solutculpa laborum nesciunt, quia sapiente nobis a facilis modi quidemanimi, quia sapiente nobis a facilis modi quidemanimi, quia sapiente nobis a facilis modi quidemanimi",
-      "rating": 5,
+      "rating": [
+        5
+      ],
       "publicationDate": "12.08.2021",
       "durationHours": 5
     }
@@ -421,18 +471,9 @@
       "userId": 3,
       "authorImage": "https://kartinki.pibig.info/uploads/posts/2023-08/1692326759_kartinki-pibig-info-p-kartinka-siluet-litsa-vkontakte-24.png",
       "authorName": "Дарья",
-      "text": "Отличный фильм! )",
+      "text": "Отличный фильм!",
       "date": "26.10.2023",
       "id": 24
-    },
-    {
-      "filmId": 2,
-      "userId": 3,
-      "authorName": "Даша",
-      "authorImage": "https://kartinki.pibig.info/uploads/posts/2023-08/1692326759_kartinki-pibig-info-p-kartinka-siluet-litsa-vkontakte-24.png",
-      "text": "ввв",
-      "date": "26.10.2023",
-      "id": 25
     }
   ]
 }

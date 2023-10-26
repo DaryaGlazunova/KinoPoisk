@@ -41,7 +41,7 @@ export interface Film {
   poster: string;
   title: string;
   description: string;
-  rating: number[];
+  rating: number;
   publicationDate: string;
   durationHours: number;
 }

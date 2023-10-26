@@ -6,7 +6,6 @@ import {
   SearchFilmParams,
 } from "../../types";
 import axios from "axios";
-import { getAverageRating } from "../../utils/getAverageRating";
 
 type RatingMinMaxValue = {
   rating: RatingProperty;
@@ -66,6 +65,10 @@ const DurationFiltrParameters: DurationMinMaxValue[] = [
   },
 ];
 
+const serverPath = window.location.href.includes("localhost")
+  ? "http://localhost:3001"
+  : "https://kinopoisk-json-server.onrender.com";
+
 const filterDataByRating = (
   filmData: Film[],
   rating: RatingProperty
@@ -76,7 +79,7 @@ const filterDataByRating = (
   if (!minMaxValuesObj) return filmData;
 
   return (filmData = filmData.filter((itemData) => {
-    const filmRating = getAverageRating(itemData.rating);
+    const filmRating = itemData.rating;
     return (
       minMaxValuesObj.minValue <= filmRating &&
       filmRating <= minMaxValuesObj.maxValue
@@ -105,10 +108,11 @@ export const fetchFilms = createAsyncThunk<Film[], SearchFilmParams>(
   "film/fetchFilms",
   async (params) => {
     const { sortBy, order, rating, duration, currentPage, perPage } = params;
-    console.log(perPage, currentPage);
-    const apiPath = `http://localhost:3001/films?_sort=${sortBy}&_order=${order}`;
-
-    let { data } = await axios.get<Film[]>(apiPath);
+    console.log(sortBy, order, perPage, currentPage);
+    const apiPath = `${serverPath}/films?_sort=${sortBy}&_order=${order}`;
+    console.log("get films", apiPath);
+    let { data } = await axios.get(apiPath);
+    console.log("get films", data);
     data = filterDataByRating(data, rating);
     data = filterDataByDuration(data, duration);
     return data;

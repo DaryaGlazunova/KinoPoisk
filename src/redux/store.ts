@@ -1,14 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import filmReducer from "./film-item/filmSlider";
 import filterReducer from "./filter/filterSlider";
-import commentsReducer from "./comments/commentsSlider";
 import { useDispatch } from "react-redux";
 
 export const store = configureStore({
   reducer: {
     film: filmReducer,
     filter: filterReducer,
-    comments: commentsReducer,
   },
 });
 
