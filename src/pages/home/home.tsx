@@ -28,6 +28,8 @@ import "./_home.scss";
 interface HomePageProps {}
 
 const HomePage: React.FC<HomePageProps> = () => {
+  const [screenWidth, setScreenWidth] = React.useState(window.innerWidth);
+  const breakpoint = 1000;
   const dispatch = useAppDispatch();
   const isSearch = React.useRef(false); //фильтров в url нет, по умолчанию ничего нет
   const isMounted = React.useRef(false);
@@ -53,6 +55,13 @@ const HomePage: React.FC<HomePageProps> = () => {
     window.scrollTo(0, 0);
   };
 
+  React.useEffect(() => {
+    const handleResizeWindow = () => setScreenWidth(window.innerWidth);
+    window.addEventListener("resize", handleResizeWindow);
+    return () => {
+      window.removeEventListener("resize", handleResizeWindow);
+    };
+  }, []);
   //парсим параметры фильтрации при первом рендере
   React.useEffect(() => {
     //проверяем есть ли параметры в url
@@ -157,12 +166,14 @@ const HomePage: React.FC<HomePageProps> = () => {
     <main>
       <div className="content container">
         <div className="content__column-1">
-          <Filter
-            selectedRating={ratingOption}
-            selectedDuration={durationOption}
-            onChangeRating={onChangeRatingOption}
-            onChangeDuration={onChangeDurationOption}
-          />
+          {screenWidth > breakpoint && (
+            <Filter
+              selectedRating={ratingOption}
+              selectedDuration={durationOption}
+              onChangeRating={onChangeRatingOption}
+              onChangeDuration={onChangeDurationOption}
+            />
+          )}
         </div>
         <div className="content__column-2">
           <div className="content__top">
@@ -172,6 +183,15 @@ const HomePage: React.FC<HomePageProps> = () => {
             </div>
             <div className="content__sort">
               <Sort value={sort} order={orderValue} />
+              {screenWidth < breakpoint && (
+                <Filter
+                  selectedRating={ratingOption}
+                  selectedDuration={durationOption}
+                  onChangeRating={onChangeRatingOption}
+                  onChangeDuration={onChangeDurationOption}
+                  dropdownVersionBreakpoint={breakpoint}
+                />
+              )}
             </div>
           </div>
           <div className="content__items">
@@ -183,7 +203,6 @@ const HomePage: React.FC<HomePageProps> = () => {
               filmsItemsList
             )}
           </div>
-          {/* <div className="content__items">{skeleton}</div> */}
           <Pagination
             perPage={perPage}
             totalFilms={items.length}

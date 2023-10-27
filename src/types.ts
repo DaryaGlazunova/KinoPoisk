@@ -1,3 +1,7 @@
+export type PopupClick = MouseEvent & {
+  path: Node[];
+};
+
 export enum Status {
   LOADING = "loading",
   SUCCESS = "completed",

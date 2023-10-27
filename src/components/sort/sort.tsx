@@ -2,17 +2,13 @@ import React from "react";
 import orderImage from "../../assets/icons/sort/sort.svg";
 
 import "./_sort.scss";
-import { SortProperty, SortPropertyEnum } from "../../types";
+import { SortProperty, SortPropertyEnum, PopupClick } from "../../types";
 import { useDispatch } from "react-redux";
 import { setOrder, setSort } from "../../redux/filter/filterSlider";
 
 type SortItem = {
   name: string;
   sortProperty: SortPropertyEnum;
-};
-
-type PopupClick = MouseEvent & {
-  path: Node[];
 };
 
 export const sortList: SortItem[] = [
