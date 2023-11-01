@@ -4,7 +4,7 @@ import { IPropsRegister } from "../../../types/auth";
 import { TextField } from "@mui/material";
 
 const RegisterPage: React.FC<IPropsRegister> = (props: IPropsRegister) => {
-  const { register, errors } = props;
+  const { register, errors, clearErrors } = props;
 
   return (
     <>
@@ -12,8 +12,8 @@ const RegisterPage: React.FC<IPropsRegister> = (props: IPropsRegister) => {
       <TextField
         error={!!errors.email}
         fullWidth={true}
-        margin="normal"
         className="auth__input"
+        margin="normal"
         label="Email"
         variant="outlined"
         placeholder="Введите ваш email"
@@ -26,8 +26,8 @@ const RegisterPage: React.FC<IPropsRegister> = (props: IPropsRegister) => {
         type="password"
         fullWidth={true}
         className="auth__input"
-        margin="normal"
         label="Password"
+        margin="normal"
         variant="outlined"
         placeholder="Введите ваш пароль"
         helperText={errors.password ? `${errors.password.message}` : ""}
@@ -36,11 +36,11 @@ const RegisterPage: React.FC<IPropsRegister> = (props: IPropsRegister) => {
 
       <TextField
         error={!!errors.confirmPassword}
-        type="confirmPassword"
+        type="password"
         className="auth__input"
         fullWidth={true}
+        label="Password"
         margin="normal"
-        label="confirmPassword"
         variant="outlined"
         placeholder="Повторите ваш пароль"
         helperText={
@@ -53,7 +53,9 @@ const RegisterPage: React.FC<IPropsRegister> = (props: IPropsRegister) => {
         Регистрация
       </button>
       <div className="auth__bottom">
-        <Link to={"/login"}>Уже есть аккаунт?</Link>
+        <Link onClick={() => clearErrors()} to={"/login"}>
+          Уже есть аккаунт?
+        </Link>
       </div>
     </>
   );

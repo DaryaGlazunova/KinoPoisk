@@ -7,10 +7,12 @@ import { useAppDispatch } from "../../redux/store";
 import { setUser } from "../../redux/user/userSlider";
 import AuthService from "../../services/auth.service";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { loginSchema, RegisterFromSchema } from "../../utils/yup";
 import { IFormValues } from "../../types/auth";
-interface AuthRootComponentProps {}
+import { AuthErrors } from "../../errors";
 
-const AuthRootComponent: React.FC<AuthRootComponentProps> = () => {
+const AuthRootComponent: React.FC = () => {
   const loacation = useLocation();
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
@@ -52,7 +54,13 @@ const AuthRootComponent: React.FC<AuthRootComponentProps> = () => {
     register,
     formState: { errors },
     handleSubmit,
-  } = useForm<IFormValues>();
+    clearErrors,
+  } = useForm<IFormValues>({
+    mode: "onSubmit",
+    resolver: yupResolver(
+      location.pathname === "/login" ? loginSchema : RegisterFromSchema
+    ),
+  });
 
   const handleSubmitForm: SubmitHandler<IFormValues> = async (data) => {
     console.log("data", data);
@@ -62,7 +70,7 @@ const AuthRootComponent: React.FC<AuthRootComponentProps> = () => {
       if (data.password === data.confirmPassword) {
         handleRegister(data.email, data.password);
       } else {
-        // throw new Error(AppErrors.PasswordDoNotMatch)
+        throw new Error(AuthErrors.PasswordDoNotMatch);
       }
     }
   };
@@ -79,9 +87,17 @@ const AuthRootComponent: React.FC<AuthRootComponentProps> = () => {
         onSubmit={handleSubmit(handleSubmitForm)}
       >
         {loacation.pathname === "/login" ? (
-          <LoginPage errors={errors} register={register} />
+          <LoginPage
+            errors={errors}
+            register={register}
+            clearErrors={clearErrors}
+          />
         ) : loacation.pathname === "/register" ? (
-          <RegisterPage errors={errors} register={register} />
+          <RegisterPage
+            errors={errors}
+            register={register}
+            clearErrors={clearErrors}
+          />
         ) : null}
       </form>
     </div>

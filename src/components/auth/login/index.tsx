@@ -6,7 +6,7 @@ import { TextField } from "@mui/material";
 import { IPropsLogin } from "../../../types/auth";
 
 const LoginPage: React.FC<IPropsLogin> = (props: IPropsLogin) => {
-  const { register, errors } = props;
+  const { register, errors, clearErrors } = props;
 
   return (
     <>
@@ -20,7 +20,7 @@ const LoginPage: React.FC<IPropsLogin> = (props: IPropsLogin) => {
         variant="outlined"
         placeholder="Введите ваш email"
         helperText={errors.email ? `${errors.email.message}` : ""}
-        {...register("email", { required: true })}
+        {...register("email")}
       ></TextField>
       <TextField
         error={!!errors.password}
@@ -32,14 +32,16 @@ const LoginPage: React.FC<IPropsLogin> = (props: IPropsLogin) => {
         variant="outlined"
         placeholder="Введите ваш пароль"
         helperText={errors.password ? `${errors.password.message}` : ""}
-        {...register("password", { required: true })}
+        {...register("password")}
       />
 
       <button className="auth__button" type="submit">
         Вход
       </button>
       <div className="auth__bottom">
-        <Link to={"/register"}>Регистрация</Link>
+        <Link onClick={() => clearErrors()} to={"/register"}>
+          Регистрация
+        </Link>
         <Link to={"/password-recovery"}>Забыли пароль?</Link>
       </div>
     </>
