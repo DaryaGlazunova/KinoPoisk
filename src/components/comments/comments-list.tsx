@@ -1,7 +1,11 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "./_comments-list.scss";
-import { fetchCommentType, CommentData, SubmitLabels } from "../../types";
+import {
+  fetchCommentType,
+  CommentData,
+  SubmitLabels,
+} from "../../types/comment";
 import Comment from "./comment-item/comment-item";
 import { changeDateFormat } from "../../utils/datetime";
 import CommentForm from "./comment-form/comment-form";

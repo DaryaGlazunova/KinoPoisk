@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./_film-info.scss";
-import { Film } from "../../types";
+import { Film } from "../../types/film";
 
 const FilmInfo: React.FC<Film> = ({
   poster,

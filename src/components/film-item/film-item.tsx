@@ -2,7 +2,7 @@ import React from "react";
 
 import "./_film-item.scss";
 import { Link } from "react-router-dom";
-import { Film } from "../../types";
+import { Film } from "../../types/film";
 
 interface FilmItemProps {
   filmData: Film;

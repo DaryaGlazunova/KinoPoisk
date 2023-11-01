@@ -5,7 +5,7 @@ import {
   RatingProperty,
   SortPropertyEnum,
   SortProperty,
-} from "../../types";
+} from "../../types/filter";
 
 export interface IntefaceFilterState {
   searchValue: string;

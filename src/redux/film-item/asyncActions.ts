@@ -1,10 +1,8 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import {
-  DurationProperty,
-  Film,
-  RatingProperty,
-  SearchFilmParams,
-} from "../../types";
+import { Film, SearchFilmParams } from "../../types/film";
+
+import { DurationProperty, RatingProperty } from "../../types/filter";
+
 import axios from "axios";
 
 type RatingMinMaxValue = {

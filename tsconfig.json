@@ -5,7 +5,7 @@
       "exactOptionalPropertyTypes": true,
       "noFallthroughCasesInSwitch": true,
       "noImplicitThis": true,
-      "noUnusedLocals": true,
+      "noUnusedLocals": false,
       "noUnusedParameters": true,
       "noImplicitAny": true,
       "noImplicitReturns": true,
@@ -21,6 +21,6 @@
       "checkJs": true,
       "isolatedModules": true
     },
-    "include": ["src/**/**/*","src/@types"],
+    "include": ["src/**/**/*","src/@types", "firebase.ts"],
     "exclude": ["node_modules"]
   }

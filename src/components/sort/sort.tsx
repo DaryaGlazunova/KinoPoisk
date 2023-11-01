@@ -2,7 +2,7 @@ import React from "react";
 import orderImage from "../../assets/icons/sort/sort.svg";
 
 import "./_sort.scss";
-import { SortProperty, SortPropertyEnum, PopupClick } from "../../types";
+import { SortProperty, SortPropertyEnum, PopupClick } from "../../types/filter";
 import { useDispatch } from "react-redux";
 import { setOrder, setSort } from "../../redux/filter/filterSlider";
 

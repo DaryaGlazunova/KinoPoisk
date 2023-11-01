@@ -1,5 +1,5 @@
 import React from "react";
-import { CommentData, SubmitLabels } from "../../../types";
+import { CommentData, SubmitLabels } from "../../../types/comment";
 import "./_comment-item.scss";
 import CommentForm from "../comment-form/comment-form";
 

@@ -3,7 +3,11 @@ import filtrSvg from "../../assets/icons/filter.svg";
 import closeSvg from "../../assets/icons//close.svg";
 
 import "./_filter.scss";
-import { RatingProperty, DurationProperty, PopupClick } from "../../types";
+import {
+  RatingProperty,
+  DurationProperty,
+  PopupClick,
+} from "../../types/filter";
 
 type TypeFilterProps = {
   selectedRating: RatingProperty;

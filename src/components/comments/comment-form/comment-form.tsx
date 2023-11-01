@@ -1,6 +1,6 @@
 import React from "react";
 import "./_comment-form.scss";
-import { SubmitLabels } from "../../../types";
+import { SubmitLabels } from "../../../types/comment";
 
 interface AddCommentProps {
   handleSubmit: (text: string, name: string) => void;

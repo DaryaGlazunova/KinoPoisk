@@ -1,5 +1,6 @@
 import axios from "axios";
-import { CommentData, Film, fetchCommentType } from "./types";
+import { Film } from "./types/film";
+import { CommentData, fetchCommentType } from "./types/comment";
 
 const serverPath = window.location.href.includes("localhost")
   ? "http://localhost:3001"

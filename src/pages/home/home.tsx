@@ -8,11 +8,8 @@ import AddFilm from "../../components/add-film-button/add-film-button";
 import { useSelector } from "react-redux";
 import { RootState, useAppDispatch } from "../../redux/store";
 import { fetchFilms } from "../../redux/film-item/asyncActions";
-import {
-  DurationProperty,
-  RatingProperty,
-  SearchFilmParams,
-} from "../../types";
+import { DurationProperty, RatingProperty } from "../../types/filter";
+import { SearchFilmParams } from "../../types/film";
 import {
   setCurrentPage,
   setDuration,

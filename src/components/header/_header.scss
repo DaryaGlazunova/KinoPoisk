@@ -22,4 +22,16 @@
 
   &__search {
   }
+
+  &__profile {
+    width: 30px;
+  }
+
+  &__login {
+    color: white;
+    font-size: 17px;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }

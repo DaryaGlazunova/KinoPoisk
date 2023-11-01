@@ -2,7 +2,7 @@ import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
 import StarRating from "../../components/star-rating/star-rating";
-import { Film } from "../../types";
+import { Film } from "../../types/film";
 import FilmInfo from "../../components/film-info/film-info";
 
 import "./_film.scss";

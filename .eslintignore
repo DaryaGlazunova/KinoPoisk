@@ -8,6 +8,7 @@ tests/files/with-syntax-error
 tests/files/just-json-files/invalid.json
 tests/files/typescript-d-ts/
 resolvers/webpack/test/files
+src/firebase.ts
 
 # we want to ignore "tests/files" here, but unfortunately doing so would
 

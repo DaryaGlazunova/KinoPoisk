@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { Film, Status } from "../../types";
+import { Film, Status } from "../../types/film";
 import { fetchFilms } from "./asyncActions";
 
 export interface IntefaceFilmState {
