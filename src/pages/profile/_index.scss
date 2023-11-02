@@ -1,0 +1,13 @@
+.profile {
+  position: relative;
+  &__popup {
+    background-color: rgb(70, 69, 69);
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 100;
+  }
+  &__image {
+    width: 30px;
+  }
+}

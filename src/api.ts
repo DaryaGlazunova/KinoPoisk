@@ -7,9 +7,7 @@ const serverPath = window.location.href.includes("localhost")
   : "https://kinopoisk-json-server.onrender.com";
 
 export async function getCommentsApi(filmId: number): Promise<CommentData[]> {
-  console.log(`${serverPath}/comments?filmId=${filmId}`);
   const { data } = await axios.get(`${serverPath}/comments?filmId=${filmId}`);
-  console.log("getCommentsApi", data);
   return data;
 }
 
@@ -17,7 +15,6 @@ export async function postCommentApi(
   newComment: fetchCommentType
 ): Promise<void> {
   const response = await axios.post(`${serverPath}/comments`, newComment);
-  console.log("postCommentApi", response);
 }
 
 export async function putCommentApi(
@@ -28,7 +25,6 @@ export async function putCommentApi(
     `${serverPath}/comments/${commentId}`,
     newParameters
   );
-  console.log("putCommentApi", response);
 }
 
 export async function deleteCommentApi(commentId: number) {

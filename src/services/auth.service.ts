@@ -18,13 +18,11 @@ const register = async (email: string, password: string) => {
 const login = async (email: string, password: string) => {
   const auth = getAuth(firebaseApp);
   const { user } = await signInWithEmailAndPassword(auth, email, password);
-  console.log("user", user);
   saveUserTokenToLocalStorage({
     email: user.email,
     id: user.uid,
     token: user.refreshToken,
   });
-  console.log("save in LS", user);
   return user;
 };
 
@@ -38,11 +36,24 @@ function saveUserTokenToLocalStorage(tokenDetails: IntefaceUserState) {
   );
 }
 
+function checkAutoLogin() {
+  const tokenDetailsString = localStorage.getItem(localStorageUserAuthDataName);
+
+  let tokenDetails = { email: null, id: null, token: null };
+
+  if (tokenDetailsString) {
+    tokenDetails = JSON.parse(tokenDetailsString);
+  }
+
+  return tokenDetails;
+}
+
 const AuthService = {
   register,
   login,
   removeUserTokenFromLocalStorage,
   saveUserTokenToLocalStorage,
+  checkAutoLogin,
 };
 
 export default AuthService;

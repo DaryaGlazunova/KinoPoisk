@@ -29,10 +29,8 @@ const Comments: React.FC = () => {
 
   async function getComments(filmId: number) {
     try {
-      console.log("получение комментариев");
       const data = await getCommentsApi(filmId);
       setCommentsList(data);
-      console.log("комменты получены и лист обновлен", data);
     } catch (error) {
       alert("Ошибка при получении комментариев к фильму!");
       navigate("/");
@@ -83,11 +81,8 @@ const Comments: React.FC = () => {
       text: text,
       date: changeDateFormat(new Date()),
     };
-    console.log("post comment");
     await postComment(commentData);
-    console.log("added comment");
     await getComments(filmId);
-    console.log("getComments");
   };
 
   const updateComment = async (
@@ -110,7 +105,6 @@ const Comments: React.FC = () => {
   };
 
   React.useEffect(() => {
-    console.log("я тут!");
     getComments(filmId);
   }, []);
 
@@ -127,7 +121,6 @@ const Comments: React.FC = () => {
   ));
   ("");
 
-  console.log("render comments list");
   return (
     <div>
       <div className="film__comments">

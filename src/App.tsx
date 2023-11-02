@@ -3,22 +3,14 @@ import React, { Suspense } from "react";
 import Header from "./components/header/header";
 import HomePage from "./pages/home/home";
 import { Route, Routes, useLocation } from "react-router-dom";
-import FilmPage from "./pages/film/film";
-import AuthRootComponent from "./components/auth";
-import { checkAutoLogin } from "./utils/auth";
+import FilmPage from "./pages/film-details/film";
+import AuthRootComponent from "./pages/auth";
 import { useAuth } from "./hooks/use-auth";
 
 const App = () => {
-  const loacation = useLocation();
   const { isLoggedIn } = useAuth();
-  // React.useEffect(() => {
-  //   checkAutoLogin();
-  // }, []);
-
   return (
     <div className="wrapper">
-      {/* {loacation.pathname !== "/login" &&
-        loacation.pathname !== "/register" && <Header />} */}
       <Header isLoggedIn={isLoggedIn} />
       <Routes>
         <Route

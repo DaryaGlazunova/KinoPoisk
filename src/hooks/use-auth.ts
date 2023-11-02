@@ -1,9 +1,18 @@
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
-import { checkAutoLogin } from "../utils/auth";
+import AuthService from "../services/auth.service";
+import { IntefaceUserState } from "../redux/user/userSlider";
 
 export function useAuth() {
-  const { email, id, token } = useSelector((state: RootState) => state.user);
+  let tokenDetails: IntefaceUserState = useSelector(
+    (state: RootState) => state.user
+  );
+
+  if (!tokenDetails.email) {
+    tokenDetails = AuthService.checkAutoLogin();
+  }
+
+  const { email, id, token } = { ...tokenDetails };
 
   return {
     isLoggedIn: !!email,

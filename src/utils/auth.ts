@@ -18,7 +18,6 @@ export function checkAutoLogin() {
 
   if (tokenDetailsString) {
     tokenDetails = JSON.parse(tokenDetailsString);
-    console.log(tokenDetails);
   }
 
   return tokenDetails;

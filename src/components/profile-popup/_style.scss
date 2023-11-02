@@ -1,0 +1,37 @@
+.profile-popup {
+  background-color: rgb(70, 69, 69);
+  border-radius: 10px;
+  z-index: 100;
+  box-shadow: 0px 5px 15px rgb(0, 0, 0);
+
+  &__container {
+    padding: 20px;
+  }
+
+  &__user-email {
+  }
+
+  &__body {
+    padding: 15px 0;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    margin: 20px 0;
+  }
+
+  &__favorites {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__logout-button {
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: rgb(167, 78, 46);
+    color: white;
+    &:hover {
+      background-color: white;
+      color: rgb(167, 78, 46);
+    }
+  }
+}
